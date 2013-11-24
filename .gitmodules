@@ -1,0 +1,6 @@
+[submodule "js/vendor/requirejs"]
+	path = js/vendor/requirejs
+	url = https://github.com/jrburke/requirejs.git
+[submodule "js/vendor/mustache"]
+	path = js/vendor/mustache
+	url = https://github.com/janl/mustache.js.git
