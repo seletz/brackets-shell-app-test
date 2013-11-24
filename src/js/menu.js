@@ -46,10 +46,19 @@ define(function (require, exports, module) {
                 }
             });
         }
+        if (command === 'tests.native') {
+            console.debug("NATIVE FUNCALL");
+
+            appshell.nexiles.testFunction("foo", function (error, ret) {
+                console.debug("appshell.nexiles.testFunction => error: ", error);
+                console.debug("appshell.nexiles.testFunction => ret:   ", ret);
+            });
+        }
     };
 
     appshell.app.addMenu('Tests', 'tests', '', '', check_error);
-    appshell.app.addMenuItem('tests', 'AJAX Test', 'tests.ajax', '', '', '', '', check_error);
+    appshell.app.addMenuItem('tests', 'AJAX Test',              'tests.ajax',   '', '', '', '', check_error);
+    appshell.app.addMenuItem('tests', 'Native Function Call',   'tests.native', '', '', 'after', 'tests.ajax', check_error);
 
 });
 
